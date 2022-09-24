@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "413282606252",
+    "project_id": "localnotification-b90d3",
+    "storage_bucket": "localnotification-b90d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413282606252:android:e0a9d1464fb19629da9309",
+        "android_client_info": {
+          "package_name": "com.tatas.gd6_a_0731"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413282606252-85v2qd257757q898o79ju660rral4ihq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1OLEERl7WtiLAIiD48C43TFdCaB744UQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413282606252-85v2qd257757q898o79ju660rral4ihq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
