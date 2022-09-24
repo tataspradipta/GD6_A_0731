@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             val name = "Notification Title"
             val descriptionText = "Notification Description"
 
@@ -61,11 +61,11 @@ class MainActivity : AppCompatActivity() {
         val intent : Intent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
+        val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
         val broadcastIntent: Intent = Intent(this, NotificationReceiver::class.java)
         broadcastIntent.putExtra("toastMessage", binding?.etMessage?.text.toString())
-        val actionIntent = PendingIntent.getBroadcast(this, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val actionIntent = PendingIntent.getBroadcast(this, 0, broadcastIntent, PendingIntent.FLAG_IMMUTABLE)
 
         val builder = NotificationCompat.Builder(this, CHANNEL_ID_1)
             .setSmallIcon(R.drawable.ic_baseline_looks_one_24)
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendNotification2() {
-        val builder = NotificationCompat.Builder(this, CHANNEL_ID_1)
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID_2)
             .setSmallIcon(R.drawable.ic_baseline_looks_two_24)
             .setContentTitle(binding?.etTitle?.text.toString())
             .setContentText(binding?.etMessage?.text.toString())
